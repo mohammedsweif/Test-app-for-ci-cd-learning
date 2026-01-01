@@ -1,0 +1,9 @@
+﻿FROM mcr.microsoft.com/mssql/server:2022-latest
+ENV ACCEPT_EULA=Y
+ENV SA_PASSWORD=NewStrong@123
+ENV MSSQL_PID=Evaluation
+EXPOSE 1455
+COPY backup.bak /var/opt/mssql
+
+
+

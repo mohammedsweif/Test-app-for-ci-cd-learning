@@ -1,0 +1,36 @@
+﻿version: "3.9"
+
+services:
+  apiapp:
+    container_name: apiapp1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - database
+    ports:
+      - "5555:8080"
+    networks:
+      - public
+      - private
+
+  database:
+    container_name: database1
+    build:
+       context: .
+       dockerfile: DockerFileForSql   
+    volumes:
+      - db_data:/var/opt/mssql
+    ports:
+      - "1455:1433"
+    networks:
+      - private
+
+volumes:
+  db_data:
+
+networks:
+  public:
+    driver: bridge
+  private:
+    driver: bridge
