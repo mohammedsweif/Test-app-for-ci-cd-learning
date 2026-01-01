@@ -26,3 +26,18 @@ jobs:
     steps:
       - name: say bye
         run: echo "bye"
+  successJob:
+    needs: build
+    if: Success()
+    runs-on: ubuntu-latest
+    steps:
+      - name: say success
+        run: echo "success"
+
+  failed_job:
+    needs: build
+    if: Failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: say failed
+        run: echo "failed"
