@@ -21,3 +21,16 @@ jobs:
         run: dotnet build --no-restore
       - name: test app
         run: echo "finsh good building."
+  alwaysrunjob:
+    needs: test
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: start working always run
+        run: echo "hello iam working now."    
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: start working
+        run: echo "hello iam working now."

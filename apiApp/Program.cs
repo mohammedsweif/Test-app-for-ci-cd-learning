@@ -15,7 +15,7 @@ builder.Services.AddSwaggerGen(opt =>
         Version = "v1",
         Title = "PickPack Api",
     });
-    opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    opt.AddSecurityDefinition("Bearer", new OpenApi SecurityScheme
     {
         Description = "JWT Authorization header using the Bearer scheme (Example: 'Bearer mohammed sweif')",
         Name = "Authorization",
