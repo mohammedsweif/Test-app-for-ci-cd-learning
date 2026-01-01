@@ -9,6 +9,10 @@ jobs:
         run: echo "hello iam working now."
       - name: Get code
         uses: actions/checkout@v6
+      - name: setup dot net
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: '9.0.x'
       - name: download dot net
         run: dotnet restore
       - name: restore dependencies
