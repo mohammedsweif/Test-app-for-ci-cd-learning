@@ -13,3 +13,7 @@ jobs:
         run: dotnet restore
       - name: restore dependencies
         run: echo "hello iam working now."
+      - name: build app
+        run: dotnet build --no-restore
+      - name: test app
+        run: echo "finsh good building."

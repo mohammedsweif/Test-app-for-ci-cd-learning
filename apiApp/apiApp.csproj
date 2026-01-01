@@ -7,7 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include=".github\workflows\PushJob.yml" />
+    <Compile Remove=".github\**" />
+    <Content Remove=".github\**" />
+    <EmbeddedResource Remove=".github\**" />
+    <None Remove=".github\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="docker-compose.yaml" />
   </ItemGroup>
 
