@@ -27,7 +27,9 @@ jobs:
     if: always()
     steps:
       - name: start working always run
-        run: echo "hello iam working now."    
+        run: echo "hello iam working now."  
+      - name: get full data
+        run: echo "${{ toJSON(github) }}"
   deploy:
     needs: test
     runs-on: ubuntu-latest
